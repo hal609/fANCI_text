@@ -22,6 +22,21 @@ from fansi_text import RGBColor
 print(RGBColor("RGB Text", 200, 130, 60))
 ```
 
+You can also form complex combinations of overlapping effects.
 ```python
-print(f"{Bold(f"Bold {Green("green and bold ?")}")}. Then normal text ? Then {Underline(Overline("overlined"))}. Now {Italic(f"italic, add {Yellow(f" and {Bold(f"bold too!")} Then back to yellow and italic")} then just italic")} and finally back to normal.")
+from fansi_text import *
+
+print(
+    Bold("Bold, " +
+         Green("green and bold. ")) + 
+    "Then normal text. Then " +
+    Underline(Overline("under and over lined. ")) +
+    "Next " + 
+    Italic("italics. Add " + 
+           Yellow("yellow " + 
+                  Bold("and bold too! ") +
+                  "Then back to yellow and italics, ") + 
+           "then just italics, ") + 
+    "and finally back to normal."
+)
 ```

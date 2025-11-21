@@ -8,6 +8,12 @@ class ANSI:
     def __repr__(self):      
         return f"\033[{self.CODE}m{self.text}\033[{self.STOP}m"
     
+    def __add__(self, other):
+        return str(self) + str(other)
+    
+    def __radd__(self, other):
+        return str(other) + str(self)
+    
 class RGB(ANSI):
     def __init__(self, text, r, g=None, b=None):
         self.text = text
@@ -30,7 +36,7 @@ class Faint(ANSI):              CODE = 2; STOP = 22
 class Italic(ANSI):             CODE = 3; STOP = 23
 class Underline(ANSI):          CODE = 4; STOP = 24
 class SlowBlink(ANSI):          CODE = 5; STOP = 25
-class RapidBlink(ANSI):         CODE = 6; STOP = 25
+class FastBlink(ANSI):          CODE = 6; STOP = 25
 class Invert(ANSI):             CODE = 7; STOP = 27
 class Conceal(ANSI):            CODE = 8; STOP = 28
 class Strikethrough(ANSI):      CODE = 9; STOP = 29
@@ -38,7 +44,7 @@ class Strikethrough(ANSI):      CODE = 9; STOP = 29
 class DoubleUnderline(ANSI):    CODE = 21; STOP = 24
 class ProportionalSpacing(ANSI):CODE = 26; STOP = 50
 
-class Overline(ANSI):          CODE = 53; STOP = 55
+class Overline(ANSI):           CODE = 53; STOP = 55
 class UnderlineColor(ANSI):     CODE = 58; STOP = 59
 class Superscript(ANSI):        CODE = 73; STOP = 75
 class Subscript(ANSI):          CODE = 74; STOP = 75
