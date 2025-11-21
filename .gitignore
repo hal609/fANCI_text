@@ -1,0 +1,5 @@
+*.ipynb
+*.csv
+build
+*.egg-info
+test.py
