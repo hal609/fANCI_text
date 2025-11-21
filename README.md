@@ -1,6 +1,6 @@
 # fansi_text
 
-A Python module to fuzzy extract dates from a corpus of text.
+A Python module for formatting text with ANCI escape codes.
 
 ## Installation
 
