@@ -3,7 +3,7 @@ class ANSI:
     CODE = ""   
     
     def __init__(self, text:str):      
-        self.text = text
+        self.text = str(text)
         
     def __repr__(self):      
         return f"\033[{self.CODE}m{self.text}\033[{self.STOP}m"
@@ -16,7 +16,7 @@ class ANSI:
     
 class RGB(ANSI):
     def __init__(self, text, r, g=None, b=None):
-        self.text = text
+        self.text = str(text)
         self.r = r
         self.g = g
         self.b = b
